@@ -19,7 +19,7 @@ A production-ready full-stack SaaS application that analyzes customer reviews us
 
 ```
 ┌─────────────┐     REST/JWT      ┌──────────────┐     JPA      ┌────────┐
-│  React SPA  │ ◄──────────────► │ Spring Boot  │ ◄──────────► │ MySQL  │
+│  React SPA  │ ◄──────────────►  │ Spring Boot  │ ◄──────────► │ MySQL  │
 │  (Vite)     │                   │   Backend    │              └────────┘
 └─────────────┘                   └──────┬───────┘
                                          │
@@ -130,32 +130,3 @@ Frontend runs at `http://localhost:5173`
 | GET | `/api/favorites` | List favorites |
 | DELETE | `/api/favorites/{id}` | Remove favorite |
 
-## Deployment
-
-### Backend
-- Build JAR: `mvn clean package -DskipTests`
-- Run: `java -jar target/review-analyzer-1.0.0.jar`
-- Deploy to AWS EC2, Railway, Render, or any Java host
-- Set all environment variables in production
-
-### Frontend
-- Build: `npm run build`
-- Deploy `dist/` folder to Vercel, Netlify, or Nginx
-- Set `VITE_API_BASE_URL` to your production API URL
-
-### Database
-- Use managed MySQL (AWS RDS, PlanetScale, etc.)
-- Run `database/schema.sql` for initial setup
-
-## Future Enhancements
-
-- Team workspaces and role-based access
-- Scheduled batch analysis
-- Email report delivery
-- Multi-language review support
-- Stripe billing integration
-- Real-time WebSocket analysis progress
-
-## License
-
-MIT
