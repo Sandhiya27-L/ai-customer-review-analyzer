@@ -4,11 +4,13 @@ server:
 spring:
   application:
     name: review-analyzer
- datasource:
-  url: jdbc:mysql://reseau.proxy.rlwy.net:50005/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-  username: root
-  password: HdYNFcuJTsBDvyzKoxixYwgxYFYIxiRM
-  driver-class-name: com.mysql.cj.jdbc.Driver
+
+  datasource:
+    url: jdbc:mysql://reseau.proxy.rlwy.net:50005/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: HdYNFcuJTsBDvyzKoxixYwgxYFYIxiRM
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -17,6 +19,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
+
   jackson:
     serialization:
       write-dates-as-timestamps: false
@@ -26,9 +29,11 @@ app:
     secret: ${JWT_SECRET:default-dev-secret-change-in-production-min-32-chars!!}
     expiration-ms: ${JWT_EXPIRATION_MS:86400000}
     remember-me-expiration-ms: ${JWT_REMEMBER_ME_EXPIRATION_MS:604800000}
+
   gemini:
     api-key: ${GEMINI_API_KEY:}
     model: ${GEMINI_MODEL:gemini-2.5-flash}
+
   cors:
     allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
 
