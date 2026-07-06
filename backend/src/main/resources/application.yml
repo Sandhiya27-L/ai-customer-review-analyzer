@@ -4,11 +4,11 @@ server:
 spring:
   application:
     name: review-analyzer
-  datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/review_analyzer?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+ datasource:
+  url: jdbc:mysql://reseau.proxy.rlwy.net:50005/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+  username: root
+  password: HdYNFcuJTsBDvyzKoxixYwgxYFYIxiRM
+  driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
