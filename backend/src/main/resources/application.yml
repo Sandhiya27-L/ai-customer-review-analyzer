@@ -34,9 +34,11 @@ app:
     api-key: ${GEMINI_API_KEY:}
     model: ${GEMINI_MODEL:gemini-2.5-flash}
 
+  #cors:
+    #allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
+  app:
   cors:
-    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
-
+    allowed-origins: http://localhost:5173,https://ai-customer-review-analyzer-frontend.onrender.com
 logging:
   level:
     com.reviewanalyzer: INFO
